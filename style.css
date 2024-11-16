@@ -34,6 +34,24 @@ h1 {
 
 #home-zone {
     background-color: #faf4e5;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#depot {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    border-top: 2px solid #c0a591;
+    padding-top: 10px;
+    overflow-y: auto;
+    height: 150px;
+}
+
+#quest-log {
+    margin-top: 20px;
+    text-align: left;
 }
 
 #field {
@@ -49,13 +67,32 @@ h1 {
     border: 1px solid #d4c4b8;
     border-radius: 5px;
     font-size: 14px;
+    width: auto;
+    text-align: center;
 }
 
+/* Player */
+.player {
+    width: 40px;
+    height: 40px;
+    background-color: #6a5e5d;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Items */
 .item {
     width: 30px;
     height: 30px;
     position: absolute;
     border-radius: 50%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .item.flower {
@@ -70,16 +107,50 @@ h1 {
     background-color: green;
 }
 
-.player {
-    width: 40px;
-    height: 40px;
-    background-color: #6a5e5d;
+/* Sparkle Effect */
+.sparkle {
+    width: 15px;
+    height: 15px;
+    background-color: yellow;
     border-radius: 50%;
     position: absolute;
+    opacity: 0.7;
+    animation: sparkle-animation 0.5s ease-out forwards;
 }
 
+@keyframes sparkle-animation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Quest Progress Bar */
+#field div[style] {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div div[style] div[style] {
+    height: 100%;
+    background-color: #76c7c0;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Controls */
 #controls {
     margin-top: 20px;
     font-size: 16px;
     color: #6a5e5d;
+}
+
+#controls p {
+    font-style: italic;
 }
