@@ -41,8 +41,9 @@ let playerY = 200;
 
 // Move Player
 function movePlayer(x, y) {
-    playerX = Math.min(Math.max(playerX + x, 0), field.clientWidth - 40);
-    playerY = Math.min(Math.max(playerY + y, 0), field.clientHeight - 40);
+    const maxWidth = field.clientWidth + homeZone.clientWidth - 40; // Combine the widths of both zones
+    playerX = Math.min(Math.max(playerX + x, 0), maxWidth); // Allow movement across zones
+    playerY = Math.min(Math.max(playerY + y, 0), field.clientHeight - 40); // Maintain height limit
     player.style.left = `${playerX}px`;
     player.style.top = `${playerY}px`;
 
@@ -125,17 +126,12 @@ function updateNPC() {
 
 // Check for Home Zone Interaction
 function checkHomeZoneInteraction() {
-    const homeZoneRect = homeZone.getBoundingClientRect();
-    const playerRect = player.getBoundingClientRect();
-
-    if (
-        playerRect.left < homeZoneRect.right &&
-        playerRect.right > homeZoneRect.left &&
-        playerRect.top < homeZoneRect.bottom &&
-        playerRect.bottom > homeZoneRect.top &&
-        collectedItems >= activeQuest.count
-    ) {
-        depositItems();
+    const homeZoneWidth = homeZone.clientWidth;
+    if (playerX < homeZoneWidth) {
+        // Player is in the Home Zone
+        if (collectedItems >= activeQuest.count) {
+            depositItems();
+        }
     }
 }
 
