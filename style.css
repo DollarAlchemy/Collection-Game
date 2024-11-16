@@ -15,8 +15,8 @@ h1 {
 
 #game-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: stretch; /* Ensure zones align vertically */
+    justify-content: center; /* Center the zones */
     width: 90%;
     margin: 20px auto;
     height: 400px;
@@ -25,20 +25,25 @@ h1 {
     position: relative;
 }
 
-#home-zone, #field {
-    width: 45%;
-    height: 100%;
-    border: 2px solid #c0a591;
-    position: relative;
-}
-
 #home-zone {
+    width: 40%;
+    height: 100%;
     background-color: #faf4e5;
     display: flex;
     flex-direction: column;
     padding: 10px;
+    border-right: none; /* Remove the right border to connect to the field */
 }
 
+#field {
+    width: 60%;
+    height: 100%;
+    background-color: #e3f7d1;
+    position: relative;
+    border-left: none; /* Remove the left border to connect to the home zone */
+}
+
+/* Depot for Collected Items */
 #depot {
     display: flex;
     flex-wrap: wrap;
@@ -49,15 +54,13 @@ h1 {
     height: 150px;
 }
 
+/* Quest Log */
 #quest-log {
     margin-top: 20px;
     text-align: left;
 }
 
-#field {
-    background-color: #e3f7d1;
-}
-
+/* NPC Styling */
 #npc {
     position: absolute;
     top: 10px;
@@ -69,6 +72,16 @@ h1 {
     font-size: 14px;
     width: auto;
     text-align: center;
+}
+
+/* Pathway Between Zones */
+#pathway {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: #d4c4b8;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Player */
