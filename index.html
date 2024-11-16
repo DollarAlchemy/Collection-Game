@@ -9,12 +9,24 @@
 <body>
     <h1>Cottagecore Adventure</h1>
     <div id="game-container">
-        <div id="home-zone">Home Zone</div>
+        <!-- Home Zone -->
+        <div id="home-zone">
+            <h2>Home Zone</h2>
+            <div id="depot"></div>
+            <div id="quest-log">
+                <h3>Completed Quests:</h3>
+                <ul id="completed-quests"></ul>
+            </div>
+        </div>
+        
+        <!-- Field -->
         <div id="field">
             <div id="npc">NPC: "Hello! Collect 5 mushrooms!"</div>
-            <!-- Spawn items dynamically here -->
+            <!-- Progress bar added dynamically -->
         </div>
     </div>
+
+    <!-- Controls -->
     <div id="controls">
         <p>Use arrow keys to move. Collect the requested items and deposit them in the home zone.</p>
     </div>
