@@ -1,0 +1,85 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2efe6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 20px;
+    font-size: 32px;
+    color: #6a5e5d;
+}
+
+#game-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 20px auto;
+    height: 400px;
+    border: 2px solid #d4c4b8;
+    background-color: #fffaf0;
+    position: relative;
+}
+
+#home-zone, #field {
+    width: 45%;
+    height: 100%;
+    border: 2px solid #c0a591;
+    position: relative;
+}
+
+#home-zone {
+    background-color: #faf4e5;
+}
+
+#field {
+    background-color: #e3f7d1;
+}
+
+#npc {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #d4c4b8;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.item {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.item.flower {
+    background-color: pink;
+}
+
+.item.mushroom {
+    background-color: brown;
+}
+
+.item.bug {
+    background-color: green;
+}
+
+.player {
+    width: 40px;
+    height: 40px;
+    background-color: #6a5e5d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#controls {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #6a5e5d;
+}
